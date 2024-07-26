@@ -1,0 +1,5 @@
+crewai~=0.41.1
+streamlit
+openai
+llama-index==0.10.58
+python-dotenv~=1.0.1
