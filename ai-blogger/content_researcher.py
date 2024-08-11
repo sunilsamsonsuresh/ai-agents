@@ -1,5 +1,6 @@
 from crewai import Agent, Task, Crew
 from toolbox import scrape_tool, search_tool
+from langchain_ollama import OllamaLLM
 
 
 class Researcher:
@@ -18,13 +19,15 @@ class Researcher:
         )
 
     def conduct_research(self):
+        llm = OllamaLLM(model="llama3")
 
         researcher = Agent(
             role=self.role,
             goal=self.goal,
             verbose=True,
             tools=[search_tool, scrape_tool],
-            backstory=self.backstory
+            backstory=self.backstory,
+            llm=llm
         )
 
         research_task = Task(

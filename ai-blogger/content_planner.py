@@ -1,5 +1,5 @@
 from crewai import Agent, Task, Crew
-from toolbox import scrape_tool, search_tool
+from toolbox import scrape_tool, search_tool, llm
 
 
 class Planner:
@@ -25,7 +25,8 @@ class Planner:
             goal=self.goal,
             verbose=True,
             tools=[search_tool, scrape_tool],
-            backstory=self.backstory
+            backstory=self.backstory,
+            llm=llm
         )
 
         planning_task = Task(

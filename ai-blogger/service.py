@@ -4,7 +4,7 @@ from content_writer import Writer
 from crewai import Crew
 
 if __name__ == '__main__':
-    topic = 'Work Visa Requirements'
+    topic = 'New Updated Policies'
     country = 'Germany'
 
     research_agent = Researcher(topic, country)

@@ -1,5 +1,6 @@
 from crewai import Agent, Task, Crew
 from dotenv import load_dotenv
+from toolbox import llm
 import os
 
 load_dotenv()
@@ -26,7 +27,8 @@ class Writer:
             goal=self.goal,
             backstory=self.backstory,
             allow_delegation=False,
-            verbose=True
+            verbose=True,
+            llm=llm
         )
 
         writing_task = Task(
